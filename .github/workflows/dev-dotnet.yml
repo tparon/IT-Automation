@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore #/p:ContinuousINtegrationBuild=true
     - name: Test
-      run: dotnet test --no-build --verbosity normal --logger trx --results-directory "TestResults"
+      run: dotnet test --no-restore --verbosity normal --logger trx --results-directory "TestResults"
     - name: Publish Test
       uses: dorny/test-reporter@v1
       if: always()

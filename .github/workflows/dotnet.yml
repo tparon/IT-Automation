@@ -20,6 +20,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configure Relase --no-restore #/p:ContinuousINtegrationBuild=true
+      run: dotnet build --configuration Release --no-restore #/p:ContinuousINtegrationBuild=true
     - name: Test
       run: dotnet test --no-build --verbosity normal --logger trx --results-directory "TestResults"
